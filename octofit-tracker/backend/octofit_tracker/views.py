@@ -7,7 +7,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         response = super().list(request, *args, **kwargs)
-        response.data['codespace_url'] = 'https://laughing-funicular-x59g76gq44jqhq7x.app.github.dev'
+        response.data['codespace_url'] = 'https://laughing-funicular-x59g76gq44jqhq7x-8000.app.github.dev'
         return JsonResponse(response.data)
 
 class TeamViewSet(viewsets.ModelViewSet):
@@ -16,7 +16,7 @@ class TeamViewSet(viewsets.ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         response = super().list(request, *args, **kwargs)
-        response.data['codespace_url'] = 'https://laughing-funicular-x59g76gq44jqhq7x.app.github.dev'
+        response.data['codespace_url'] = 'https://laughing-funicular-x59g76gq44jqhq7x-8000.app.github.dev'
         return JsonResponse(response.data)
 
 # Similar updates can be applied to other viewsets if needed.

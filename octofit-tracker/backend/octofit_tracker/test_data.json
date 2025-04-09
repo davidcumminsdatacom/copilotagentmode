@@ -1,0 +1,42 @@
+[
+    {
+        "model": "octofit_tracker.user",
+        "pk": 1,
+        "fields": {
+            "email": "john.doe@example.com",
+            "name": "John Doe"
+        }
+    },
+    {
+        "model": "octofit_tracker.team",
+        "pk": 1,
+        "fields": {
+            "team_name": "Team Alpha"
+        }
+    },
+    {
+        "model": "octofit_tracker.activity",
+        "pk": 1,
+        "fields": {
+            "user_id": 1,
+            "activity_type": "Running",
+            "duration": 30
+        }
+    },
+    {
+        "model": "octofit_tracker.leaderboard",
+        "pk": 1,
+        "fields": {
+            "user_id": 1,
+            "score": 100
+        }
+    },
+    {
+        "model": "octofit_tracker.workout",
+        "pk": 1,
+        "fields": {
+            "workout_name": "Push-ups",
+            "reps": 20
+        }
+    }
+]

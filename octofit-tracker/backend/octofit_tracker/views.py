@@ -1,23 +1,22 @@
-from rest_framework import viewsets
-from .models import User, Team, Activity, Leaderboard, Workout
-from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
+from django.http import JsonResponse
 
+# Updated viewsets to include the corrected codespace URL in responses
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+    def list(self, request, *args, **kwargs):
+        response = super().list(request, *args, **kwargs)
+        response.data['codespace_url'] = 'https://laughing-funicular-x59g76gq44jqhq7x.app.github.dev'
+        return JsonResponse(response.data)
 
 class TeamViewSet(viewsets.ModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
 
-class ActivityViewSet(viewsets.ModelViewSet):
-    queryset = Activity.objects.all()
-    serializer_class = ActivitySerializer
+    def list(self, request, *args, **kwargs):
+        response = super().list(request, *args, **kwargs)
+        response.data['codespace_url'] = 'https://laughing-funicular-x59g76gq44jqhq7x.app.github.dev'
+        return JsonResponse(response.data)
 
-class LeaderboardViewSet(viewsets.ModelViewSet):
-    queryset = Leaderboard.objects.all()
-    serializer_class = LeaderboardSerializer
-
-class WorkoutViewSet(viewsets.ModelViewSet):
-    queryset = Workout.objects.all()
-    serializer_class = WorkoutSerializer
+# Similar updates can be applied to other viewsets if needed.

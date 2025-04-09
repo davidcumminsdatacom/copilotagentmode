@@ -6,6 +6,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'octofit_db',
+        'HOST': 'localhost',
+        'PORT': 27017,
     }
 }
 
@@ -13,6 +15,7 @@ DATABASES = {
 INSTALLED_APPS += [
     'corsheaders',
     'octofit_tracker',
+    'djongo'
 ]
 
 MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
